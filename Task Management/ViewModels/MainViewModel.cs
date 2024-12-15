@@ -311,7 +311,7 @@ namespace Task_Management.ViewModels
 
         }
 
-        public async Task<TaskModel> GetCollectionData(TaskModel selectedTypeTask)
+        public Task<TaskModel> GetCollectionData(TaskModel selectedTypeTask)
         {
             TaskModel modeldata = null;
 
@@ -327,7 +327,7 @@ namespace Task_Management.ViewModels
             {
                 modeldata = DoneTaskDataCollection.FirstOrDefault(t => t.Titletask == selectedTypeTask.Titletask);
             }
-            return modeldata;
+            return Task.FromResult(modeldata);
         }
 
 
